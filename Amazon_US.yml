@@ -1,0 +1,30 @@
+# Configuration file template
+
+resource_registry:
+  OS::Nova::Server : IBM::EC2::Server
+  OS::Cinder::Volume : IBM::EC2::Volume
+  OS::Cinder::VolumeAttachment : IBM::EC2::VolumeAttachment
+  OS::Neutron::Port : IBM::EC2::Port
+  OS::Neutron::Net : IBM::EC2::VPC
+  OS::Neutron::Subnet : IBM::EC2::Subnet
+  OS::Neutron::Router : IBM::EC2::RouteTable
+  OS::Neutron::RouterGateway : IBM::EC2::InternetGateway
+  OS::Neutron::RouterInterface : IBM::EC2::RouteTableAssociation
+  OS::Neutron::FloatingIP : IBM::EC2::EIP
+  OS::Neutron::FloatingIPAssociation : IBM::EC2::EIPAssociation
+  OS::Neutron::SecurityGroup : IBM::EC2::SecurityGroup
+  OS::Heat::AutoScalingGroup : IBM::EC2::AutoScalingGroup
+  OS::Heat::ScalingPolicy : IBM::EC2::AutoScalingPolicy
+  OS::Ceilometer::Alarm : IBM::EC2::Alarm
+  OS::Swift::Container : IBM::S3::Bucket
+parameters:
+  flavor: "m1.small"
+  key_name: "demo_key"
+  availability_zone: "nova"
+  network_id_private: "32153043-24c9-45e5-91a1-0d6a53edff7c"
+  ucd_server_url: "http://192.168.27.100:8081"
+  ucd_user: "PasswordIsAuthToken"
+  ucd_password: "e1d041e6-dfd0-4946-80be-117cbb633084"
+  ucd_relay_url: "None"
+  public_network_id: "feb5c1d7-7f64-4b35-87a1-98352058cd64" # public
+  jke.db.host: "10.0.0.3"
